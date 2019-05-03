@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-<%- gpu = context.node_type.include?("vis") -%>
-
 # Clean the environment
 module purge
+
+# Work around spam message about dconf write permissions
+#export XDG_RUNTIME_DIR="/tmp/${UID}"
+unsetenv XDG_RUNTIME_DIR
 
 # Set working directory to home directory
 cd "${HOME}"
@@ -33,13 +35,6 @@ cd "${HOME}"
 module load <%= context.version %>
 
 # Launch MATLAB
-<%- if gpu -%>
-module load intel/16.0.3 virtualgl
-module list
-set -x
-vglrun matlab -desktop -nosoftwareopengl
-<%- else -%>
 module list
 set -x
 matlab -desktop
-<%- end -%>
