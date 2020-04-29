@@ -20,9 +20,9 @@ For VNC server support:
 - [TurboVNC] 2.1+
 - [websockify] 0.8.0+
 
-For hardware rendering support:
+For hardware rendering support (not on CHPC):
 
-- [X server]
+- [X server] (CHPC does not run X server on compute nodes)
 - [VirtualGL] 2.3+
 
 **Optional** software:
