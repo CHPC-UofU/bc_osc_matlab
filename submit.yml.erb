@@ -7,3 +7,6 @@ script:
     - "1"
     - "-n"
     - "<%= num_cores %>"
+    <%- if gpu_type != "none" -%>
+    - "--gres=gpu:<%= gpu_type %>"
+    <%- end -%>

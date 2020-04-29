@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# source Lmod if it's not already sourced - cron starts in clean environment
+if [ -z "$LMOD_VERSION" ]; then
+  source /etc/profile.d/chpc.sh
+fi
+
 # Clean the environment
 module purge
 
