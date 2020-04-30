@@ -4,7 +4,11 @@ category: Interactive Apps
 subcategory: GUIs
 role: batch_connect
 description: |
-  This app will launch a [MATLAB] GUI on the [notchpeak cluster]. You will be able
+  This app will launch a [MATLAB] GUI on the [Notchpeak cluster]. You will be able
   to interact with the MATLAB GUI through a VNC session.
 
+  [GPU specification] is optional for the partitions that have them.
+
   [MATLAB]: https://www.mathworks.com/products/matlab.html
+  [Notchpeak cluster]: https://www.chpc.utah.edu/documentation/guides/notchpeak.php
+  [GPU specification]: https://www.chpc.utah.edu/documentation/guides/gpus-accelerators.php#overview

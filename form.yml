@@ -9,14 +9,15 @@ attributes:
     widget: "number_field"
     label: "Number of cores"
     value: 1
-    help: "Maximum number of CPU cores is 32"
+    help: |
+      Maximum of 32 tasks is allowed on notchpeak-shared-short partition
     min: 1
     step: 1
   bc_num_hours:
     value: 1
     min: 1
     step: 1
-    help: "Maximum notchpeak-shared-short walltime is 8 hours"
+    help: "Maximum notchpeak-shared-short walltime is 8 hours, general 72 hours, owner 14 days"
   bc_vnc_resolution:
     required: true
   version:
@@ -37,6 +38,14 @@ attributes:
   bc_queue:
     label: "Partition"
     value: "notchpeak-shared-short"
+  memtask:
+    widget: "text_field"
+    value: "default"
+    label: "Memory per job"
+    help: |
+      - **default** - Use default, 4 GB per task.
+      - **512M** - Use 512 MB.
+      - **128G** - Use 128 GB, this is the maximum on notchpeak-shared-short.
   gpu_type:
     label: "GPU type:count"
     help: |
@@ -55,6 +64,7 @@ form:
   - version
   - num_cores
   - bc_num_hours
+  - memtask
   - bc_account
   - bc_queue
   - gpu_type
